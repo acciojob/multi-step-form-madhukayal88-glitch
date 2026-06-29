@@ -12,11 +12,10 @@ function App() {
     expiry_date: '',
   });
 
-  // Updates the shared form data state
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData((prev) => ({
+      ...prev,
       [id]: value,
     }));
   };
@@ -31,13 +30,11 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Submitted Successfully:', formData);
-    // You can add additional submission logic here if needed
+    console.log(formData);
   };
 
   return (
-    <div className="container" style={{ padding: '20px', maxWidth: '400px' }}>
-      <h2>Multi-Step Form</h2>
+    <div className="App">
       <form onSubmit={handleFormSubmit}>
         <Step
           currentStep={currentStep}
